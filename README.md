@@ -1,16 +1,55 @@
-# React + Vite
+# Memoization Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Memoization Lab is a React application that demonstrates how memoization can reduce unnecessary calculations and component re-renders.
 
-Currently, two official plugins are available:
+The app displays the same product catalog in two panels:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Baseline catalog** recalculates the filtered product list and statistics on every render.
+- **Optimized catalog** uses `useMemo` for calculated data, `useCallback` for event handlers, and `React.memo` for product list components.
 
-## React Compiler
+The toolbar includes search, category and sorting filters, an in-stock filter, favorites, and an unrelated counter. Calculation counters make the performance difference visible when the unrelated counter is changed.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Hooks: `useMemo`, `useCallback`, `useState`
+- `React.memo`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+## Development
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal, usually `http://localhost:5173/`.
+
+## Other Commands
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run ESLint:
+
+```bash
+npm run lint
+```
